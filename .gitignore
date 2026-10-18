@@ -9,3 +9,4 @@ githubio.code-workspace
 .bundle
 vendor/*
 .jekyll-cache/
+.claude/
