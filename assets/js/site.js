@@ -40,7 +40,8 @@
     const thumbInner = p.image ? `<img src="${esc(p.image)}" alt="" loading="lazy">` : `<span class="thumb-ph">${esc(short)}</span>`;
     const thumb = paper ? `<a class="thumb" href="${esc(paper)}" tabindex="-1" aria-hidden="true">${thumbInner}</a>` : `<div class="thumb">${thumbInner}</div>`;
     const links = Object.entries(p.links || {}).filter(([, u]) => u)
-      .map(([k, u]) => `<a href="${esc(u)}">${LINK_LABELS[k] || esc(k)}</a>`).join("");
+      // an arXiv link is labelled "Paper" unless the card also has a published-version link
+      .map(([k, u]) => `<a href="${esc(u)}">${k === "arxiv" && !p.links.paper ? "Paper" : LINK_LABELS[k] || esc(k)}</a>`).join("");
     return `<article class="pub" data-topics="${(p.topics || []).join(" ")}">
       ${thumb}
       <div class="pub-body">
