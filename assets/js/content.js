@@ -82,7 +82,7 @@ const PUBLICATIONS = [
     shortName: "IndicF5",
     authors: "Praveen Srinivasa Varadhan, Srija Anand, Soma Siddhartha, Mitesh M. Khapra",
     venue: "Interspeech 2026",
-    presentation: "",
+    presentation: "Oral",
     awards: [],
     image: "assets/imgs/indic-f5.png",
     topics: ["tts"],
